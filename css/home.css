@@ -1,0 +1,38 @@
+/* * {
+    border: 1px solid red;
+} */
+h1 {
+
+    font-size: 64px;
+    font-weight: 400;    
+}
+
+p {
+    font-size: 16px;
+}
+
+.btn {
+    border-color: var(--primary-color);
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;        
+}
+
+.btn i {
+    color: white;
+    font-size: 18px;
+    /* line-height: 22px; */
+}
+
+#intro .btn {
+    background-color: var(--primary-color);
+}
+
+#intro .btn:hover {    
+}
+
+.btn a {
+
+}
