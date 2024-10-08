@@ -9,18 +9,18 @@ function loadPage(page) {
 
     // Carregar o CSS específico da página
     const cssLink = document.getElementById('page-css');
-    cssLink.href = `css/${page}.css`; // Atualiza o link do CSS de acordo com a página
+    cssLink.href = `/assets/css/${page}.css`; // Atualiza o link do CSS de acordo com a página
 }
 
 // Função para carregar o navbar e o footer
 function loadComponents() {
-    fetch('components/navbar.html')
+    fetch('/assets/components/navbar.html')
         .then(response => response.text())
         .then(html => {
             document.getElementById('navbar').innerHTML = html;
         });
 
-    fetch('components/footer.html')
+    fetch('/assets/components/footer.html')
         .then(response => response.text())
         .then(html => {
             document.getElementById('footer').innerHTML = html;
