@@ -1,18 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400&family=DM+Sans+Display:ital,wght@1,400&family=Montserrat:wght@400&display=swap');
 
 :root {
-    --primary-color: #704EEA;    
-    --secondary-color: #DFC8FE;    
-    --accent-color: #FFD900;    
-    --highlight-color: #FFD25B;    
-    --background-color: #FFF3A9;    
+    --primary-color: #704EEA;
+    --secondary-color: #DFC8FE;
+    --accent-color: #FFD900;
+    --highlight-color: #FFD25B;
+    --background-color: #FFF3A9;
     --custom-pink: #E924AE;
     --custom-orange: #F19436;
     --custom-text-color: #0A0430;
 }
 
 body {
-    font-family: 'DM Sans', sans-serif;    
+    font-family: 'DM Sans', sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -60,31 +60,29 @@ p {
 
 ul {
     list-style-type: none;
-}
-
-nav ul {
     background-color: var(--primary-color);
     border-radius: 100px;
 }
 
-nav ul li {
+ul li {
     margin-right: 25px;
     font-size: 16px;
     padding: 10px;
     line-height: 35px;
 }
 
-a, a:hover {
+a,
+a:hover {
     color: white;
-    text-decoration: none;    
+    text-decoration: none;
 }
 
-nav a:hover {    
-    font-weight:800;
+nav a:hover {
+    font-weight: 800;
 }
 
 .logo {
-    width: 190px;    
+    width: 190px;
     /* height: auto; */
 }
 
@@ -101,27 +99,29 @@ nav a:hover {
     top: -2px;
     left: 0;
     width: 100%;
-    height: 100px; /* Altura da onda */
+    height: 100px;
+    /* Altura da onda */
 }
 
 
 footer {
-    background-color: #6F24E9;  
-    position: relative;   
+    background-color: #6F24E9;
+    position: relative;
     padding-top: 0;
 }
 
-footer h3, footer p {
+footer h3,
+footer p {
     color: white;
 }
 
-footer h3 {    
+footer h3 {
     font-size: 24px;
     margin-bottom: 30px;
     font-weight: 500;
 }
 
-footer p {    
+footer p {
     font-size: 18px;
     font-weight: 400;
 }
@@ -134,4 +134,84 @@ footer p {
     margin-right: 25px;
     font-size: 23px;
     color: white;
+}
+
+.nav-link.active {
+    font-weight: bold;
+    position: relative;
+}
+
+/* container do marcador */
+.nav-link.active::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    /* Ajuste a posição vertical do círculo */
+    transform: translateX(-50%);
+    width: 15px;    
+    height: 15px;    
+    padding: 0px 10px;
+    border-radius: 100% 100% 0% 0%;    
+    background-color: white;    
+    display: flex;    
+    align-items: center;    
+    justify-content: center;    
+}
+
+/* marcador circular */
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    /* Ajuste a posição vertical da bola dentro do círculo */
+    transform: translateX(-50%);
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+}
+
+
+/* Estilização de drawing-container */
+
+.drawing {
+    position: absolute;
+    height: auto;
+}
+
+#star-y {
+    left: 180px;
+    top: 140px;
+    width: 92px;
+}
+
+#ellipse-p {
+    left: 50px;
+    top: 50%;
+    width: 28px;
+}
+
+#plus-p {
+    left: 60px;
+    width: 50px;
+}
+
+#star-p {
+    right: 30px;
+    top: 250px;
+    width: 92px;
+}
+
+#plus-y {
+    bottom: 160px;
+    right: 220px;
+    width: 50px;
+}
+
+#ellipse-pp {
+    right: 17%;
+    top: 140px;
+    width: 28px;
 }
