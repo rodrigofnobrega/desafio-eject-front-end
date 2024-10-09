@@ -6,6 +6,9 @@
     --accent-color: #FFD900;    
     --highlight-color: #FFD25B;    
     --background-color: #FFF3A9;    
+    --custom-pink: #E924AE;
+    --custom-orange: #F19436;
+    --custom-text-color: #0A0430;
 }
 
 body {
@@ -31,6 +34,16 @@ body {
 .highlight-color {
     color: var(--highlight-color);
     /* Usar a variável de destaque 2 */
+}
+
+.custom-pink {
+    color: var(--custom-pink);
+    /* Usar a cor personalizada rosa */
+}
+
+.custom-orange {
+    color: var(--custom-orange);
+    /* Usar a cor personalizada laranja */
 }
 
 h3,
