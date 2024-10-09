@@ -16,18 +16,18 @@ function loadPage(page) {
 
     // Carregar o CSS específico da página
     const cssLink = document.getElementById('page-css');
-    cssLink.href = `../desafio-eject-front-end/assets/css/${page}.css`; // Atualiza o link do CSS de acordo com a página
+    cssLink.href = `/assets/css/${page}.css`; // Atualiza o link do CSS de acordo com a página
 }
 
 // Função para carregar o navbar e o footer
 function loadComponents() {
-    fetch('../desafio-eject-front-end/assets/components/navbar.html')
+    fetch('/assets/components/navbar.html')
         .then(response => response.text())
         .then(html => {
             document.getElementById('navbar').innerHTML = html;
         });
 
-    fetch('../desafio-eject-front-end/assets/components/footer.html')
+    fetch('/assets/components/footer.html')
         .then(response => response.text())
         .then(html => {
             document.getElementById('footer').innerHTML = html;
@@ -68,12 +68,12 @@ function loadFlickity() {
 function loadDrawingImages(containerId) {
     // Define the image data
     const images = [
-        { id: "star-y", src: "../desafio-eject-front-end/assets/imgs/videos/star-y.png", style: { left: '250px', top: '265px', width: '92px' } },
-        { id: "ellipse-p", src: "../desafio-eject-front-end/assets/imgs/videos/ellipse-p.png", style: { left: '100px', top: '55%', width: '28px' } },
-        { id: "plus-p", src: "../desafio-eject-front-end/assets/imgs/videos/plus-p.png", style: { left: '60px', width: '50px', top: '180px' } },
-        { id: "star-p", src: "../desafio-eject-front-end/assets/imgs/videos/star-p.png", style: { right: '60px', top: '320px', width: '92px' } },
-        { id: "plus-y", src: "../desafio-eject-front-end/assets/imgs/videos/plus-y.png", style: { bottom: '200px', right: '365px', width: '50px' } },
-        { id: "ellipse-pp", src: "../desafio-eject-front-end/assets/imgs/videos/ellipse-pp.png", style: { right: '17%', top: '200px', width: '28px' } }
+        { id: "star-y", src: "/assets/imgs/videos/star-y.png", style: { left: '250px', top: '265px', width: '92px' } },
+        { id: "ellipse-p", src: "/assets/imgs/videos/ellipse-p.png", style: { left: '100px', top: '55%', width: '28px' } },
+        { id: "plus-p", src: "/assets/imgs/videos/plus-p.png", style: { left: '60px', width: '50px', top: '180px' } },
+        { id: "star-p", src: "/assets/imgs/videos/star-p.png", style: { right: '60px', top: '320px', width: '92px' } },
+        { id: "plus-y", src: "/assets/imgs/videos/plus-y.png", style: { bottom: '200px', right: '365px', width: '50px' } },
+        { id: "ellipse-pp", src: "/assets/imgs/videos/ellipse-pp.png", style: { right: '17%', top: '200px', width: '28px' } }
     ];
 
     // Get the container element
