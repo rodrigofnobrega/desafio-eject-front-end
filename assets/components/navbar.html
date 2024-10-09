@@ -1,12 +1,31 @@
-<div class="d-flex justify-content-between align-items-center mt-3 mx-5">
-    <img src="/assets//imgs/logo.png" alt="Logo" class="logo img-fluid">
+<nav class="navbar navbar-expand-lg navbar-light mx-5 mt-2">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="../desafio-eject-front-end/assets/imgs/logo.png" alt="Logo" class="logo img-fluid">
+        </a>
 
-    <nav>
-        <ul class="d-flex">
-            <li><a href="#" onclick="navigate('home')">home</a></li>
-            <li><a href="#" onclick="navigate('videos')">vídeos</a></li>
-            <li><a href="#" onclick="navigate('forum')">fórum</a></li>
-            <li><a href="#" onclick="navigate('parents')">pais & profs</a></li>
-        </ul>
-    </nav>
-</div>
+        <!-- Button for hamburger menu in mobile view -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible menu -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto w-md-100 flex-column flex-lg-row justify-content-lg-between">
+                <li class="nav-item px-md-2 py-md-1 ms-2 text-center w-md-100">
+                    <a class="nav-link text-light active" href="#" onclick="navigate('home', this)">home</a>
+                </li>
+                <li class="nav-item px-md-2 py-md-1 ms-2 text-center w-md-100">
+                    <a class="nav-link text-light" href="#" onclick="navigate('videos', this)">vídeos</a>
+                </li>
+                <li class="nav-item px-md-2 py-md-1 ms-2 text-center w-md-100">
+                    <a class="nav-link text-light" href="#" onclick="navigate('forum', this)">fórum</a>
+                </li>
+                <li class="nav-item px-md-2 py-md-1 me-2 text-center w-md-100">
+                    <a class="nav-link text-light" href="#" onclick="navigate('parents', this)">pais & profs</a>
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+</nav>

@@ -6,23 +6,28 @@ function loadPage(page) {
         .then(html => {
             document.getElementById('content').innerHTML = html;
 
+            // Verificar se a classe drawing-container está presente na página
+            if (document.querySelector('.drawing-container')) {
+                loadDrawingImages('drawing-container'); // Chama a função com a classe correta
+            }
+
             loadFlickity();
         });
 
     // Carregar o CSS específico da página
     const cssLink = document.getElementById('page-css');
-    cssLink.href = `/assets/css/${page}.css`; // Atualiza o link do CSS de acordo com a página
+    cssLink.href = `../desafio-eject-front-end/assets/css/${page}.css`; // Atualiza o link do CSS de acordo com a página
 }
 
 // Função para carregar o navbar e o footer
 function loadComponents() {
-    fetch('/assets/components/navbar.html')
+    fetch('../desafio-eject-front-end/assets/components/navbar.html')
         .then(response => response.text())
         .then(html => {
             document.getElementById('navbar').innerHTML = html;
         });
 
-    fetch('/assets/components/footer.html')
+    fetch('../desafio-eject-front-end/assets/components/footer.html')
         .then(response => response.text())
         .then(html => {
             document.getElementById('footer').innerHTML = html;
@@ -59,13 +64,53 @@ function loadFlickity() {
     document.body.appendChild(flickityJS);
 }
 
+// drawingComponent.js
+function loadDrawingImages(containerId) {
+    // Define the image data
+    const images = [
+        { id: "star-y", src: "../desafio-eject-front-end/assets/imgs/videos/star-y.png", style: { left: '250px', top: '265px', width: '92px' } },
+        { id: "ellipse-p", src: "../desafio-eject-front-end/assets/imgs/videos/ellipse-p.png", style: { left: '100px', top: '55%', width: '28px' } },
+        { id: "plus-p", src: "../desafio-eject-front-end/assets/imgs/videos/plus-p.png", style: { left: '60px', width: '50px', top: '180px' } },
+        { id: "star-p", src: "../desafio-eject-front-end/assets/imgs/videos/star-p.png", style: { right: '60px', top: '320px', width: '92px' } },
+        { id: "plus-y", src: "../desafio-eject-front-end/assets/imgs/videos/plus-y.png", style: { bottom: '200px', right: '365px', width: '50px' } },
+        { id: "ellipse-pp", src: "../desafio-eject-front-end/assets/imgs/videos/ellipse-pp.png", style: { right: '17%', top: '200px', width: '28px' } }
+    ];
+
+    // Get the container element
+    const container = document.querySelector(`.${containerId}`); // Use querySelector para selecionar a classe
+    if (!container) {
+        console.error(`Container with class ${containerId} not found.`);
+        return;
+    }
+
+    // Create and append images
+    images.forEach(imgData => {
+        const img = document.createElement('img');
+        img.className = 'drawing';
+        img.id = imgData.id;
+        img.src = imgData.src;
+                
+        Object.assign(img.style, imgData.style);
+    
+        container.appendChild(img);
+    });
+}
+
 // Inicializar a SPA com a página inicial
 window.addEventListener('load', () => {
     loadComponents();
-    loadPage('home');
+    loadPage('home');    
 });
 
 // função para trocar de página (chamada ao clicar nos links da navbar)
-function navigate(page) {
+function navigate(page, element) {
+    // Chama a função para carregar a página
     loadPage(page);
+        
+    const links = document.querySelectorAll('.navbar-nav .nav-link');
+    links.forEach(link => {
+        link.classList.remove('active');
+    });
+    
+    element.classList.add('active');
 }

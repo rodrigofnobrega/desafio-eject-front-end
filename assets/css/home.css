@@ -1,10 +1,19 @@
-/* * {
-    border: 1px solid red;
-} */
 h1 {
 
     font-size: 64px;
-    font-weight: 400;    
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+
+h4 {
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
 }
 
 p {
@@ -12,12 +21,15 @@ p {
 }
 
 .btn {
-    border-color: var(--primary-color);
     border-radius: 50px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;        
+    cursor: pointer;
+}
+
+#intro .btn {
+    border-color: var(--primary-color);
 }
 
 .btn i {
@@ -30,9 +42,111 @@ p {
     background-color: var(--primary-color);
 }
 
-#intro .btn:hover {    
+#intro .btn:hover {}
+
+.btn a {}
+
+#tools {
+    margin: 25px 100px;
 }
 
-.btn a {
+#team {
+    background-color: var(--primary-color);
+    color: white;
+}
 
+.box {
+    height: 400px;
+    border-radius: 50px;
+}
+
+.tool {
+    background-color: var(--primary-color);
+    text-align: justify;
+    padding: 35px;
+}
+
+.text-justify-custom {
+    text-align: justify;
+}
+
+.text-justify-custom h2::after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+}
+
+.forum-item h4 {
+    color: black;
+    text-align: start;
+    margin-top: 15px;
+}
+
+i {
+    padding: 5px 10px;
+    border-radius: 100%;
+}
+
+#platform {
+    background-color: var(--highlight-color);
+}
+
+#platform i {
+    background-color: var(--primary-color);
+}
+
+#platform .btn {
+    border-color: var(--primary-color);
+}
+
+.highlight-box {
+    border-radius: 50px;
+    padding: 75px;
+}
+
+#games {
+    background-color: #E924AE;
+}
+
+#games i {
+    background-color: white;
+    color: #E924AE;
+}
+
+#games .btn {
+    border-color: white;
+}
+
+#profiles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px; /* Espaçamento entre os perfis */
+}
+
+.profile {
+    flex: 1 1 20%; /* Ajusta o tamanho de cada perfil */
+    text-align: center;
+    max-width: 250px; /* Define uma largura máxima */
+}
+
+.profile-img {
+    width: 200px; 
+    height: 200px;
+    margin: 0 auto 20px auto;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+.profile-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem cubra todo o círculo */
+    object-position: center; /* Foca no centro da imagem */
+    border-radius: 50%;
+    transform: scale(1.2); /* Aproxima a imagem levemente */
 }

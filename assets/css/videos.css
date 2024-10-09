@@ -18,45 +18,7 @@ p {
     position: relative;
 }
 
-.drawing {
-    position: absolute;
-    height: auto;
-}
 
-#star-y {
-    left: 180px;
-    top: 140px;
-    width: 92px;
-}
-
-#ellipse-p {
-    left: 50px;
-    top: 50%;
-    width: 28px;
-}
-
-#plus-p {
-    left: 60px;
-    width: 50px;
-}
-
-#star-p {
-    right: 30px;
-    top: 250px;
-    width: 92px;
-}
-
-#plus-y {
-    bottom: 160px;
-    right: 220px;
-    width: 50px;
-}
-
-#ellipse-pp {
-    right: 17%;
-    top: 140px;
-    width: 28px;
-}
 
 .vid-main p {
     margin: 0 auto;
