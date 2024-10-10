@@ -71,11 +71,19 @@ div.materialsTitle p::after {
     gap: 3rem;
     justify-content: flex-start;
     max-width: 80vw;
+    padding: 0.5rem;
     overflow: auto;
 }
 
 .materials div.material {
     width: 360px;
+    height: 300px;
+    transition: all 0.5s;
+    color: var(--custom-text-color);
+}
+
+.material:hover {
+    transform: translateX(-10px);
 }
 
 .material img {

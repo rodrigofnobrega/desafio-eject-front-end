@@ -139,6 +139,14 @@ div.columnsContainer .footerColumn {
     gap: 0.8rem;
 }
 
+.footerColumn div.socialMedia a {
+    transition: all 0.3s;
+}
+
+.footerColumn div.socialMedia a:hover {
+    transform: translateY(-10px);
+}
+
 .footerColumn div.socialMedia img {
     width: 1.8rem;
 }
@@ -239,5 +247,9 @@ div.columnsContainer .footerColumn {
 
     .footerColumn {
         align-items: center;
+    }
+
+    .drawing {
+        display: none;
     }
 }
