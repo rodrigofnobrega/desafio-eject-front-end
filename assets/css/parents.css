@@ -1,0 +1,98 @@
+section#parents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5rem;
+}
+
+div#intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+div#intro h1 {
+    max-width: 920px;
+    width: 80vw;
+    min-width: 500px;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+div#intro p {
+    font-family: 'DM Sans', sans-serif;
+
+    max-width: 900px;
+    width: 70vw;
+    min-width: 480px;
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+/* ======= */
+
+div#supportMaterials {
+    display: flex;
+    flex-direction: column;
+
+    gap: 6rem;
+    width: 100%;
+    padding: 3rem 6rem;
+
+    text-align: initial;
+}
+
+div.materialsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.materialsContainer div.materialsTitle p {
+    font-weight: bold;
+    font-size: 2.25rem;
+}
+
+div.materialsTitle p::after {
+    display: block;
+    content: "";
+    height: 10px;
+    width: 70px;
+    background: var(--backgroundColor, orange);
+}
+
+.materialsContainer div.materials {
+    display: flex;
+    gap: 3rem;
+    justify-content: flex-start;
+    max-width: 80vw;
+    overflow: auto;
+}
+
+.materials div.material {
+    width: 360px;
+}
+
+.material img {
+    width: 360px;
+    height: 220px;
+}
+
+.material img.filterImage {
+    filter: invert(10%) sepia(37%) saturate(268%) hue-rotate(319deg) brightness(103%) contrast(98%);
+}
+
+.material p {
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+div.materialsTitle {
+    width: 100%;
+}
