@@ -9,7 +9,6 @@ p {
     font-size: 16px;
     font-weight: 400;
     line-height: 32px;
-    color: var(--custom-text-color)
 }
 
 .vid-main {
@@ -172,10 +171,6 @@ p {
 
     .videos-container h1 {
         font-size: 25px;
-    }
-
-    .drawing {
-        display: none;
     }
 
     .vid-img-grid {
