@@ -1,5 +1,5 @@
+/* Typography */
 h1 {
-
     font-size: 64px;
     font-weight: 400;
 }
@@ -8,7 +8,6 @@ h2 {
     font-size: 36px;
     font-weight: 600;
 }
-
 
 h4 {
     color: white;
@@ -20,10 +19,12 @@ p {
     font-size: 16px;
 }
 
+/* Images */
 div#home img {
     object-fit: cover;
 }
 
+/* Buttons */
 .btn {
     border-radius: 50px;
     display: inline-flex;
@@ -33,23 +34,16 @@ div#home img {
 }
 
 #intro .btn {
+    background-color: var(--primary-color);
     border-color: var(--primary-color);
 }
 
 .btn i {
     color: white;
     font-size: 18px;
-    /* line-height: 22px; */
 }
 
-#intro .btn {
-    background-color: var(--primary-color);
-}
-
-#intro .btn:hover {}
-
-.btn a {}
-
+/* Layout */
 #tools {
     margin: 25px 100px;
 }
@@ -80,17 +74,21 @@ div#home img {
     width: 100%;
 }
 
+/* Forum Items */
 .forum-item h4 {
     color: black;
     text-align: start;
     margin-top: 15px;
 }
 
+/* Icons */
 i {
     padding: 5px 10px;
     border-radius: 100%;
+    cursor: pointer;
 }
 
+/* Sections */
 #platform {
     background-color: var(--highlight-color);
 }
@@ -121,36 +119,115 @@ i {
     border-color: white;
 }
 
+/* Profiles */
 #profiles {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 20px; /* Espaçamento entre os perfis */
+    gap: 20px;
+    /* Espaçamento entre os perfis */
 }
 
 .profile {
-    flex: 1 1 20%; /* Ajusta o tamanho de cada perfil */
+    flex: 1 1 20%;
+    /* Ajusta o tamanho de cada perfil */
     text-align: center;
-    max-width: 250px; /* Define uma largura máxima */
+    max-width: 250px;
+    display: block;
+
 }
 
 .profile-img {
-    width: 200px; 
+    width: 200px;
     height: 200px;
     margin: 0 auto 20px auto;
     border-radius: 50%;
     overflow: hidden;
     display: flex;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
 }
 
 .profile-img img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Garante que a imagem cubra todo o círculo */
-    object-position: center; /* Foca no centro da imagem */
+    object-fit: cover;
+    /* Garante que a imagem cubra todo o círculo */
+    object-position: center;
+    /* Foca no centro da imagem */
     border-radius: 50%;
-    transform: scale(1.2); /* Aproxima a imagem levemente */
+    transform: scale(1.2);
+    /* Aproxima a imagem levemente */
+}
+
+/* Overflow Containers */
+#tools-items,
+#forum-items,
+#support-items {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+.tool,
+.forum-item,
+.profile {
+    min-width: 250px;
+    flex: 0 0 auto;
+    margin-right: 20px;
+}
+
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .overflow-item {
+        overflow-x: auto;
+        white-space: nowrap;
+        /* Faz com que os itens não quebrem para a próxima linha */
+    }
+
+    .tool,
+    .forum-item,
+    .profile {
+        display: inline-block;
+        /* Permite que os itens sejam exibidos em linha */
+        width: 200px;
+        margin: 10px;
+    }
+
+    /* interação com o carousel para telas pequenas */
+
+    #profiles .profile {
+        display: none;
+        /* Esconde todos os membros */
+    }
+
+    #profiles .profile.active {
+        display: block;
+    }
+
+    i.fa-chevron-left,
+    i.fa-chevron-right {
+        cursor: pointer;
+        font-size: 2rem;
+        /* Ajuste o tamanho do ícone conforme necessário */
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    h4 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 12px;
+    }
+
 }

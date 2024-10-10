@@ -102,7 +102,7 @@ p {
 /* carrossel */
 
 .videos-container {
-    width: 80%;
+    width: 85%;
     margin: 0 auto;
     text-align: left;
 }
@@ -165,8 +165,19 @@ p {
 
 @media screen and (max-width: 768px) {
     h1 {
-        font-size: 37px;
-        line-height: 48px;
+        font-size: 36px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    h4 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 12px;
     }
 
     .videos-container h1 {

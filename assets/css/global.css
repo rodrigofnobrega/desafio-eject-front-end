@@ -156,22 +156,24 @@ div.columnsContainer .footerColumn {
     position: relative;
 }
 
-/* container do marcador */
+/* container do marcador com topo arredondado e achatamento maior nas laterais */
 .nav-link.active::before {
     content: '';
     position: absolute;
     left: 50%;
     bottom: -5px;
-    /* Ajuste a posição vertical do círculo */
+    /* Ajuste a posição vertical */
     transform: translateX(-50%);
     width: 30px;
-    height: 15px; 
-    padding: 0px 10px;
-    border-radius: 100% 100% 0% 0%;    
-    background-color: white;    
-    display: flex;    
-    align-items: center;    
-    justify-content: center;    
+    /* Largura maior para mais espaço nas laterais */
+    height: 30px;
+    /* Altura para dar mais destaque à curva */
+    background-color: white;
+    clip-path: polygon(0% 100%, 10% 85%, 25% 70%, 50% 50%, 75% 70%, 90% 85%, 100% 100%);
+    /* Curva gaussiana mais suave */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* marcador circular */
@@ -180,13 +182,13 @@ div.columnsContainer .footerColumn {
     position: absolute;
     left: 50%;
     bottom: 0;
-    /* Ajuste a posição vertical da bola dentro do círculo */
     transform: translateX(-50%);
     width: 5px;
     height: 5px;
     border-radius: 50%;
     background-color: var(--primary-color);
 }
+
 
 
 /* Estilização de drawing-container */
@@ -252,4 +254,6 @@ div.columnsContainer .footerColumn {
     .drawing {
         display: none;
     }
+
+    
 }
