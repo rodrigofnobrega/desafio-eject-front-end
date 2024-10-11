@@ -1,23 +1,27 @@
-// Função para carregar o conteúdo HTML e o CSS específico
 function loadPage(page) {
-    // Carregar conteúdo HTML
     fetch(`pages/${page}.html`)
         .then(response => response.text())
         .then(html => {
             document.getElementById('content').innerHTML = html;
 
-            // Verificar se a classe drawing-container está presente na página
+            // Após o conteúdo ser carregado, inicialize os componentes necessários
             if (document.querySelector('.drawing-container')) {
-                loadDrawingImages('drawing-container'); // Chama a função com a classe correta
+                loadDrawingImages('drawing-container');
             }
-
             loadFlickity();
+
+            // Se houver membros no perfil, inicializa a navegação entre eles
+            const members = document.querySelectorAll('#profiles .profile');
+            if (members.length > 0) {
+                initProfileNavigation(members);
+            }
         });
 
     // Carregar o CSS específico da página
     const cssLink = document.getElementById('page-css');
-    cssLink.href = `/assets/css/${page}.css`; // Atualiza o link do CSS de acordo com a página
+    cssLink.href = `/assets/css/${page}.css`;
 }
+
 
 // Função para carregar o navbar e o footer
 function loadComponents() {
@@ -99,7 +103,7 @@ function loadDrawingImages(containerId) {
 // Inicializar a SPA com a página inicial
 window.addEventListener('load', () => {
     loadComponents();
-    loadPage('home');    
+    loadPage('parents');    
 });
 
 // função para trocar de página (chamada ao clicar nos links da navbar)
@@ -113,4 +117,36 @@ function navigate(page, element) {
     });
     
     element.classList.add('active');
+}
+
+function initProfileNavigation(members) {
+    let currentIndex = 0;
+
+    function showMember(index) {
+        members.forEach(member => member.classList.remove('active'));
+        members[index].classList.add('active');
+    }
+
+    // Mostra o primeiro membro
+    showMember(currentIndex);
+
+    // Chevrons (setas)
+    const chevronLeft = document.getElementById('chevron-left');
+    const chevronRight = document.getElementById('chevron-right');
+
+    if (chevronLeft && chevronRight) {
+        // Evento de clique para o chevron direito
+        chevronRight.addEventListener('click', function () {
+            currentIndex = (currentIndex + 1) % members.length;
+            showMember(currentIndex);
+        });
+
+        // Evento de clique para o chevron esquerdo
+        chevronLeft.addEventListener('click', function () {
+            currentIndex = (currentIndex - 1 + members.length) % members.length;
+            showMember(currentIndex);
+        });
+    } else {
+        console.warn('Chevron elements not found.');
+    }
 }
