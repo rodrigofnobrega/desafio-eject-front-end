@@ -21,7 +21,78 @@ Você pode acessar o site fazendo o **download / clone** do projeto e abrir o ar
 
 ## ✔️ Técnicas e tecnologias utilizadas
 
-O site possui quatro páginas principais, com navegação dinâmica gerenciada por **JavaScript**. Esse sistema permite que os componentes comuns, como o cabeçalho (header) e o rodapé (footer), permaneçam fixos, enquanto o conteúdo principal é renderizado dinamicamente conforme a página selecionada no menu de navegação (navbar).
+O site segue um modelo de SPA, possuindo quatro páginas principais, com navegação dinâmica gerenciada por **JavaScript**. Esse sistema permite que os componentes comuns, como o cabeçalho (header) e o rodapé (footer), permaneçam fixos, enquanto o conteúdo principal é renderizado dinamicamente conforme a página selecionada no menu de navegação (navbar).
+
+### Funções principais
+#### Inicialização e navegação do site
+Quando a aplicação é iniciada, os componentes principais e a página inicial são automaticamente carregados na tela.
+```javascript
+// Inicializar a SPA com a página inicial
+window.addEventListener('load', () => {
+    loadComponents();
+    loadPage('home');    
+});
+
+// função para trocar de página (chamada ao clicar nos links da navbar)
+function navigate(page, element) {
+    // Chama a função para carregar a página
+    loadPage(page);
+        
+    const links = document.querySelectorAll('.navbar-nav .nav-link');
+    links.forEach(link => {
+        link.classList.remove('active');
+    });
+    
+    element.classList.add('active');
+}
+```
+
+#### Função loadComponents
+A função loadComponents carrega os componentes comuns a todas as páginas (navbar e footer). A função busca os arquivos html dos componentes e os carrega na tela. A estilização desses componentes globais está definida em `/assets/css/global.css`
+```javascript
+// Função para carregar o navbar e o footer
+function loadComponents() {
+    fetch('/assets/components/navbar.html')
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById('navbar').innerHTML = html;
+        });
+
+    fetch('/assets/components/footer.html')
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById('footer').innerHTML = html;
+        });
+}
+```
+
+#### Carregamento de página
+A loadPage recebe o nome da página e carrega toda sua estrutura e estilização para a aplicação, inicializando também os componentes necessários, como carrosséis e desenhos da tela.
+```javascript
+function loadPage(page) {
+    fetch(`pages/${page}.html`)
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById('content').innerHTML = html;
+
+            // Após o conteúdo ser carregado, inicialize os componentes necessários
+            if (document.querySelector('.drawing-container')) {
+                loadDrawingImages('drawing-container');
+            }
+            loadFlickity();
+
+            // Se houver membros no perfil, inicializa a navegação entre eles
+            const members = document.querySelectorAll('#profiles .profile');
+            if (members.length > 0) {
+                initProfileNavigation(members);
+            }
+        });
+
+    // Carregar o CSS específico da página
+    const cssLink = document.getElementById('page-css');
+    cssLink.href = `/assets/css/${page}.css`;
+}
+```
 
 O projeto conta com as tecnologias:
 
