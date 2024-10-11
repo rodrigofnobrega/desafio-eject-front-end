@@ -1,5 +1,6 @@
 <h1 align="center"> Desafio front-end web - EJECT </h1>
-![Imagem de capa - desafio front-end](assets/imgs/readme/capa.png)
+
+![Imagem de capa - desafio front-end](https://github.com/user-attachments/assets/3f66cc3a-1468-4039-b59c-b57f10316f39)
 
 Este projeto apresenta uma plataforma educacional que fornece informações sobre seus recursos e ferramentas. O projeto foi desenvolvido como parte do processo seletivo da Empresa Júnior da Escola de Ciências e Tecnologia da UFRN **(EJECT)**.
 
@@ -32,5 +33,5 @@ O projeto conta com as tecnologias:
 
 # Autores
 
-| [<img loading="lazy" src="https://avatars.githubusercontent.com/u/81655988?v=4" width=115><br><sub>Ângelo Miranda</sub>](https://github.com/angelomiray) | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/92534145?v=4" width=115><br><sub>Rodrigo Nóbrega</sub>](https://github.com/rodrigofnobrega) | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/97708606?v=4" width=115><br><sub>Thales Wendel</sub>](https://github.com/thaleswe) | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/88515883?v=4" width=115><br><sub>Tiego Rafael</sub>](https://github.com/Tiegow) | 
+| [<img loading="lazy" src="https://avatars.githubusercontent.com/u/81655988?v=4" width=115><br><sub>Ângelo Miranda</sub>](https://github.com/angelomiray) | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/92534145?v=4" width=115><br><sub>Rodrigo Nóbrega</sub>](https://github.com/rodrigofnobrega) | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/97708606?v=4" width=115><br><sub>Thales Wendel</sub>](https://github.com/thaleswe) | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/88515883?v=4" width=115><br><sub>Tiego Rafael</sub>](https://github.com/Tiegow)
 | :---: | :---: | :---: | :---: |
