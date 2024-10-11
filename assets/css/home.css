@@ -26,6 +26,7 @@ div#home img {
 
 /* Buttons */
 .btn {
+    width: fit-content;
     border-radius: 50px;
     display: inline-flex;
     align-items: center;
@@ -73,6 +74,16 @@ div#home img {
     display: inline-block;
     width: 100%;
 }
+
+#forum-items, #support{
+    overflow: hidden;
+}
+
+.forum-item {
+    overflow: hidden; 
+    white-space: nowrap;
+}
+
 
 /* Forum Items */
 .forum-item h4 {
@@ -125,13 +136,11 @@ i {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 20px;
-    /* Espaçamento entre os perfis */
+    gap: 20px;    
 }
 
 .profile {
-    flex: 1 1 20%;
-    /* Ajusta o tamanho de cada perfil */
+    flex: 1 1 20%;      
     text-align: center;
     max-width: 250px;
     display: block;
@@ -176,6 +185,14 @@ i {
     min-width: 250px;
     flex: 0 0 auto;
     margin-right: 20px;
+}
+
+.tool, .profile, .forum-item {
+    transition: transform 0.3s;
+}
+
+.tool:hover, .profile:hover, .forum-item:hover {
+    transform: scale(1.05); 
 }
 
 
