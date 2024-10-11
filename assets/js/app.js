@@ -1,7 +1,7 @@
 // Inicializar a SPA com a página inicial
 window.addEventListener('load', () => {
     loadComponents();
-    loadPage('parents');
+    loadPage('home');
 });
 
 // Função principal para carregar uma página HTML e seus componentes
