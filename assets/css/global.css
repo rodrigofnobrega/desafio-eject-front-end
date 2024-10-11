@@ -11,6 +11,47 @@
     --custom-text-color: #0A0430;
 }
 
+/* Estilos do scroll para o tema light */
+html {
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    /* Define a largura do scroll */
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f0f0f0;
+    /* Cor do fundo do track do scroll */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #c0c0c0;
+    /* Cor da barra de rolagem */
+    border-radius: 10px;
+    /* Faz a barra de rolagem ficar arredondada */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #a0a0a0;
+    /* Cor ao passar o mouse sobre a barra */
+}
+
+::-webkit-scrollbar-thumb:active {
+    background-color: #808080;
+    /* Cor ao clicar na barra */
+}
+
+/* Scroll para Firefox */
+* {
+    scrollbar-width: thin;
+    /* Define a barra de rolagem fina */
+    scrollbar-color: #c0c0c0 #f0f0f0;
+    /* Cor da barra e do track no Firefox */
+}
+
+
 body {
     font-family: 'DM Sans', sans-serif;
     margin: 0;
@@ -243,5 +284,5 @@ div.columnsContainer .footerColumn {
         display: none;
     }
 
-    
+
 }
