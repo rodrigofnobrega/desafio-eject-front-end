@@ -35,9 +35,74 @@ p {
     text-align: left;
 }
 
-.img-inicial{
-    width: 45%;
+.forum-img-container {
+    width: 50vw;
+    height: 500px;
+    position: absolute;
+    top: 58%;
+    right: 20px;
+    transform: translate(0, -50%);
 }
+
+.img-ellipse {
+    background-color: #fff;
+    width: 33%;
+    height: 115px;
+    border-radius: 60px;
+    position: absolute;
+    z-index: 1;
+    bottom: 25%;
+    right: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-ellipse-in {
+    background-color: #FFC62F;
+    width: 85%;
+    height: 80px;
+    border-radius: 50px;
+}
+
+.forum-img-container img {
+    position: absolute;
+    z-index: 0;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 40px;
+    object-fit: cover;
+}
+
+#first {
+    object-position: center;
+    width: 42%;
+    height: 52%;
+    left: 16%;
+}
+
+#second {
+    object-position: center;
+    width: 40%;
+    height: 55%;
+    top: 13%;
+    right: 0;
+}
+
+#third {
+    object-position: top;
+    width: 55%;
+    height: 43%;
+    bottom: 0;
+    left: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .forum-img-container {
+        display: none;
+    }
+}
+
 
 #forum .btn{
     background-color: var(--primary-color);
