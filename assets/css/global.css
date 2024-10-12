@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400&family=DM+Sans+Display:ital,wght@1,400&family=Montserrat:wght@400&display=swap');
+
+:root {
+    --primary-color: #704EEA;
+    --secondary-color: #DFC8FE;
+    --accent-color: #FFD900;
+    --highlight-color: #FFD25B;
+    --background-color: #FFF3A9;
+    --custom-pink: #E924AE;
+    --custom-orange: #F19436;
+    --custom-text-color: #0A0430;
+}   
+/* Estilos do scroll para o tema light */
+html {
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    /* Define a largura do scroll */
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f0f0f0;
+    /* Cor do fundo do track do scroll */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #c0c0c0;
+    /* Cor da barra de rolagem */
+    border-radius: 10px;
+    /* Faz a barra de rolagem ficar arredondada */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #a0a0a0;
+    /* Cor ao passar o mouse sobre a barra */
+}
+
+::-webkit-scrollbar-thumb:active {
+    background-color: #808080;
+    /* Cor ao clicar na barra */
+}
+
+/* Scroll para Firefox */
+* {
+    scrollbar-width: thin;
+    /* Define a barra de rolagem fina */
+    scrollbar-color: #c0c0c0 #f0f0f0;
+    /* Cor da barra e do track no Firefox */
+}
+
+/* Estilos do scroll para o tema light */
+html {
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    /* Define a largura do scroll */
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f0f0f0;
+    /* Cor do fundo do track do scroll */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #c0c0c0;
+    /* Cor da barra de rolagem */
+    border-radius: 10px;
+    /* Faz a barra de rolagem ficar arredondada */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #a0a0a0;
+    /* Cor ao passar o mouse sobre a barra */
+}
+
+::-webkit-scrollbar-thumb:active {
+    background-color: #808080;
+    /* Cor ao clicar na barra */
+}
+
+/* Scroll para Firefox */
+* {
+    scrollbar-width: thin;
+    /* Define a barra de rolagem fina */
+    scrollbar-color: #c0c0c0 #f0f0f0;
+    /* Cor da barra e do track no Firefox */
+}
+
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.primary-color {
+    color: var(--primary-color);
+}
+
+.secondary-color {
+    color: var(--secondary-color);
+}
+
+.accent-color {
+    color: var(--accent-color);
+}
+
+.highlight-color {
+    color: var(--highlight-color);
+}
+
+.custom-pink {
+    color: var(--custom-pink);
+}
+
+.custom-orange {
+    color: var(--custom-orange);
+}
+
+h3,
+p {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.italic {
+    font-family: 'DM Serif Display', sans-serif !important;
+    font-style: italic;
+}
+
+ul {
+    list-style-type: none;
+    background-color: var(--primary-color);
+    border-radius: 100px;
+}
+
+ul li {
+    margin-right: 25px;
+    font-size: 16px;
+    padding: 10px;
+    line-height: 35px;
+}
+
+a,
+a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    font-weight: 800;
+}
+
+.logo {
+    width: 190px;
+}
+
+.svg-container {
+    width: 100%;            /* Ocupar toda a largura disponível */
+    overflow: hidden;      /* Evitar overflow se o SVG exceder a largura */
+    margin-bottom: -4px;   /* Remover espaço entre o SVG e o footer */
+}
+
+svg {
+    width: 100%; 
+    height: auto;        
+}
+
+footer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    color: #F5F5F5;
+    background-color: #6F24E9;
+    padding-top: 0;
+    padding-bottom: 2rem;
+    min-height: 400px; 
+}
+
+footer div.appInfo {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    padding: 2rem;
+}
+
+div.appInfo div.columnsContainer {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2rem;
+}
+
+div.columnsContainer .footerColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footerColumn div.socialMedia {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.footerColumn div.socialMedia a {
+    transition: all 0.3s;
+}
+
+.footerColumn div.socialMedia a:hover {
+    transform: translateY(-10px);
+}
+
+.footerColumn div.socialMedia img {
+    width: 1.8rem;
+}
+
+.nav-link.active {
+    font-weight: bold;
+    position: relative;
+}
+.nav-link.active::before {
+    content: '';
+    position: absolute;
+    left: 50%; /* Centralizar o SVG horizontalmente */
+    bottom: -20px; 
+    transform: translateX(-50%);
+    width: 75px; 
+    height: 30px;
+    background-image: url('/assets/imgs/navbar/wave.svg');        
+    background-position: top;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* marcador circular. agora foi adiciona o próprio circulo ao svg
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    left: 51%; 
+    transform: translateX(-50%);
+    bottom: -3px;
+    width: 8px; 
+    height: 8px; 
+    border-radius: 50%; 
+    background-color: var(--primary-color);
+} */
+
+
+/* Estilização de drawing-container */
+
+.drawing {
+    position: absolute;
+    height: auto;
+}
+
+#star-y {
+    left: 180px;
+    top: 140px;
+    width: 92px;
+}
+
+#ellipse-p {
+    left: 50px;
+    top: 50%;
+    width: 28px;
+}
+
+#plus-p {
+    left: 60px;
+    width: 50px;
+}
+
+#star-p {
+    right: 30px;
+    top: 250px;
+    width: 92px;
+}
+
+#plus-y {
+    bottom: 160px;
+    right: 220px;
+    width: 50px;
+}
+
+#ellipse-pp {
+    right: 17%;
+    top: 140px;
+    width: 28px;
+}
+
+/* Regras de estilização para telas menores */
+@media screen and (max-width: 768px) {
+    .wave-container {
+        height: auto;
+    }
+
+    .wave-container img {
+        width: 100%;
+        top: 0; /* Ajuste fino para telas pequenas */
+    }
+
+    div.appInfo div.columnsContainer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .footerColumn div.socialMedia {
+        justify-content: center;
+    }
+
+    .footerColumn {
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 1042px) {
+    .drawing {
+        display: none;
+    }
+}
