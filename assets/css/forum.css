@@ -36,10 +36,10 @@ p {
 }
 
 .forum-img-container {
-    width: 50vw;
-    height: 500px;
+    width: 43vw;
+    height: 65%;
     position: absolute;
-    top: 58%;
+    top: 50%;
     right: 20px;
     transform: translate(0, -50%);
 }
@@ -97,7 +97,7 @@ p {
     left: 0;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
     .forum-img-container {
         display: none;
     }
