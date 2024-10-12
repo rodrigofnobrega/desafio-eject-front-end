@@ -21,13 +21,14 @@ p {
 }
 
 #forum{
-    padding: 40px;
+    padding: 30px;
 }
 
 .container-inicial{
     width: 100%;
     display: flex;
     flex-direction: row;
+    position: relative;
 }
 
 .titulo{
@@ -36,11 +37,11 @@ p {
 }
 
 .forum-img-container {
-    width: 43vw;
-    height: 65%;
+    width: 43%;
+    height: 110%;
     position: absolute;
     top: 50%;
-    right: 20px;
+    right: 0;
     transform: translate(0, -50%);
 }
 
