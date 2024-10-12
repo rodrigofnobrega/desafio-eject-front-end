@@ -48,3 +48,24 @@ function updateActiveLink(element) {
     links.forEach(link => link.classList.remove('active'));
     element.classList.add('active');
 }
+
+
+function form() {
+    const formSection = document.getElementById("form-section");
+    
+    if (formSection.style.display === "none") {
+        formSection.style.display = "block";
+        formSection.style.opacity = 0;
+        setTimeout(() => {
+            formSection.style.opacity = 1;
+            formSection.style.transition = "opacity 0.5s ease";
+        }, 0);
+    } else {
+        formSection.style.opacity = 0;
+        setTimeout(() => {
+            formSection.style.display = "none";
+        }, 500); // Tempo deve ser igual ao da transição
+    }
+}
+
+
