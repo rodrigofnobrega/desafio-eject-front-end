@@ -9,6 +9,45 @@
     --custom-pink: #E924AE;
     --custom-orange: #F19436;
     --custom-text-color: #0A0430;
+}   
+/* Estilos do scroll para o tema light */
+html {
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    /* Define a largura do scroll */
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f0f0f0;
+    /* Cor do fundo do track do scroll */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #c0c0c0;
+    /* Cor da barra de rolagem */
+    border-radius: 10px;
+    /* Faz a barra de rolagem ficar arredondada */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #a0a0a0;
+    /* Cor ao passar o mouse sobre a barra */
+}
+
+::-webkit-scrollbar-thumb:active {
+    background-color: #808080;
+    /* Cor ao clicar na barra */
+}
+
+/* Scroll para Firefox */
+* {
+    scrollbar-width: thin;
+    /* Define a barra de rolagem fina */
+    scrollbar-color: #c0c0c0 #f0f0f0;
+    /* Cor da barra e do track no Firefox */
 }
 
 /* Estilos do scroll para o tema light */
@@ -64,38 +103,31 @@ body {
 
 .secondary-color {
     color: var(--secondary-color);
-    /* Usar a variável secundária */
 }
 
 .accent-color {
     color: var(--accent-color);
-    /* Usar a variável de destaque 1 */
 }
 
 .highlight-color {
     color: var(--highlight-color);
-    /* Usar a variável de destaque 2 */
 }
 
 .custom-pink {
     color: var(--custom-pink);
-    /* Usar a cor personalizada rosa */
 }
 
 .custom-orange {
     color: var(--custom-orange);
-    /* Usar a cor personalizada laranja */
 }
 
 h3,
 p {
     font-family: 'Montserrat', sans-serif;
-    /* Usar Montserrat para títulos */
 }
 
 .italic {
     font-family: 'DM Serif Display', sans-serif !important;
-    /* Usar DM Sans Display Italic para texto itálico */
     font-style: italic;
 }
 
@@ -124,26 +156,35 @@ nav a:hover {
 
 .logo {
     width: 190px;
-    /* height: auto; */
 }
 
-.waveContainer img {
-    user-select: none;
-    margin-top: 10px;
-    transform: scaleX(-1);
+.svg-container {
+    width: 100%;            /* Ocupar toda a largura disponível */
+    overflow: hidden;      /* Evitar overflow se o SVG exceder a largura */
+    margin-bottom: -4px;   /* Remover espaço entre o SVG e o footer */
+}
+
+svg {
+    width: 100%; 
+    height: auto;        
 }
 
 footer {
+    position: relative;
     display: flex;
     flex-direction: column;
     color: #F5F5F5;
+    background-color: #6F24E9;
+    padding-top: 0;
+    padding-bottom: 2rem;
+    min-height: 400px; 
 }
 
 footer div.appInfo {
     display: flex;
     flex-direction: column;
-
-    background-color: #6F24E9;
+    background-color: transparent;
+    padding: 2rem;
 }
 
 div.appInfo div.columnsContainer {
@@ -152,15 +193,10 @@ div.appInfo div.columnsContainer {
     padding: 2rem;
 }
 
-div.columnsContainer .footerColumn.logoColumn {
-    justify-content: space-between;
-}
-
 div.columnsContainer .footerColumn {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    width: 300px;
 }
 
 .footerColumn div.socialMedia {
@@ -184,40 +220,32 @@ div.columnsContainer .footerColumn {
     font-weight: bold;
     position: relative;
 }
-
-/* container do marcador com topo arredondado e achatamento maior nas laterais */
 .nav-link.active::before {
     content: '';
     position: absolute;
-    left: 50%;
-    bottom: -5px;
-    /* Ajuste a posição vertical */
+    left: 50%; /* Centralizar o SVG horizontalmente */
+    bottom: -20px; 
     transform: translateX(-50%);
-    width: 30px;
-    /* Largura maior para mais espaço nas laterais */
+    width: 75px; 
     height: 30px;
-    /* Altura para dar mais destaque à curva */
-    background-color: white;
-    clip-path: polygon(0% 100%, 10% 85%, 25% 70%, 50% 50%, 75% 70%, 90% 85%, 100% 100%);
-    /* Curva gaussiana mais suave */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background-image: url('/assets/imgs/navbar/wave.svg');        
+    background-position: top;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
-/* marcador circular */
+/* marcador circular. agora foi adiciona o próprio circulo ao svg
 .nav-link.active::after {
     content: '';
     position: absolute;
-    left: 50%;
-    bottom: 0;
+    left: 51%; 
     transform: translateX(-50%);
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
+    bottom: -3px;
+    width: 8px; 
+    height: 8px; 
+    border-radius: 50%; 
     background-color: var(--primary-color);
-}
-
+} */
 
 
 /* Estilização de drawing-container */
@@ -262,9 +290,17 @@ div.columnsContainer .footerColumn {
     width: 28px;
 }
 
-
 /* Regras de estilização para telas menores */
 @media screen and (max-width: 768px) {
+    .wave-container {
+        height: auto;
+    }
+
+    .wave-container img {
+        width: 100%;
+        top: 0; /* Ajuste fino para telas pequenas */
+    }
+
     div.appInfo div.columnsContainer {
         flex-direction: column;
         align-items: center;
@@ -279,10 +315,10 @@ div.columnsContainer .footerColumn {
     .footerColumn {
         align-items: center;
     }
+}
 
+@media screen and (max-width: 1042px) {
     .drawing {
         display: none;
     }
-
-
 }
